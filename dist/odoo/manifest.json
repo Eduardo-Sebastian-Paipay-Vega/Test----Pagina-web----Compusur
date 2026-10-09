@@ -1,0 +1,17 @@
+{
+  "status": "draft",
+  "target": "COMPUSUR website_id=1",
+  "format": "HTML fragment + scoped CSS; not an installable Odoo module",
+  "contains_live_connection": false,
+  "unresolved": [
+    "Logotipo original",
+    "Imágenes reales de productos",
+    "Vinculación dinámica a precios/stock",
+    "Verificación de características y enlaces de productos",
+    "Destino real de cotizaciones"
+  ],
+  "files": {
+    "inicio.fragment.html": "6e8a4bc99b4651bbf0ed96a792af0af8170d2510d8ea1be3f59068bcd2a19fd4",
+    "compusur.css": "a912b846a08ea791ca69bbcc15d805bed5193e7bc0625187914c026d4cabc58e"
+  }
+}

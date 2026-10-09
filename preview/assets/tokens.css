@@ -1,0 +1,13 @@
+.cs-site{
+  --cs-blue:#1359ce;
+  --cs-paper:light-dark(#fff,#131c2c);
+  --cs-ink:light-dark(#13233c,#edf3ff);
+  --cs-muted:light-dark(#54637a,#aabbd3);
+  --cs-line:light-dark(#dce4ee,#31415a);
+  --cs-soft:light-dark(#f1f5fa,#1c2a40);
+  background:var(--cs-paper);
+  color:var(--cs-ink);
+  font:14px/1.5 Arial,sans-serif;
+  min-height:1050px;
+  border-radius:12px;
+  overflow:clip}

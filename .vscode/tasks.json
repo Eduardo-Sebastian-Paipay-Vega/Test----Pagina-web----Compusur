@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Compusur: vista previa","type":"process","command":"python","args":["scripts/project.py","preview"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[],"presentation":{"reveal":"always","panel":"dedicated"}},
+    {"label":"Compusur: construir","type":"process","command":"python","args":["scripts/project.py","build"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[],"group":{"kind":"build","isDefault":true}},
+    {"label":"Compusur: validar","type":"process","command":"python","args":["scripts/project.py","check"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[]},
+    {"label":"Compusur: exportar borrador Odoo","type":"process","command":"python","args":["scripts/project.py","export"],"options":{"cwd":"${workspaceFolder}"},"problemMatcher":[]}
+  ]
+}

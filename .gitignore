@@ -1,0 +1,10 @@
+preview/
+dist/
+__pycache__/
+*.pyc
+.env
+.env.*
+credencial.xml
+*.key
+*.pem
+*.pfx

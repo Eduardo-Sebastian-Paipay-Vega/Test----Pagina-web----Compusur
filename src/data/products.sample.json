@@ -1,0 +1,26 @@
+[
+  {
+    "id": 10,
+    "category": "Laptops",
+    "name": "HP 15-GW0013LA",
+    "specs": "Ryzen 7 3700U · 8 GB RAM · 512 GB SSD",
+    "url": "/shop/tmvfm-portatil-hp-15-gw0013la-15-6-fhd-ryzen-7-3700u-10",
+    "verified_product_url": true
+  },
+  {
+    "id": null,
+    "category": "Laptops",
+    "name": "ASUS TUF Gaming F16",
+    "specs": "Intel Core 5 · 16 GB RAM · RTX 3050",
+    "url": "/shop",
+    "verified_product_url": false
+  },
+  {
+    "id": null,
+    "category": "Impresión",
+    "name": "HP DesignJet T950",
+    "specs": "Consulta las características en su ficha.",
+    "url": "/shop",
+    "verified_product_url": false
+  }
+]

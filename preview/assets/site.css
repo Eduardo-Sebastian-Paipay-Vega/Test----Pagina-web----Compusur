@@ -1,0 +1,405 @@
+
+.cs-site *{
+  box-sizing:border-box}
+  .cs-site button,.cs-site input{
+    font:inherit}
+    .cs-site button:focus-visible,.cs-site input:focus-visible{
+      outline:3px solid #68a2ff;
+      outline-offset:3px}
+      .cs-site button{
+        border:0;
+        background:none;
+        color:inherit;
+        min-height:44px;
+        padding:10px 0;
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        text-align:left}
+        .cs-site button:hover{
+          color:var(--cs-blue)}
+          .cs-site svg{
+            width:18px;
+            height:18px;
+            flex-shrink:0}
+            .cs-site .cs-top{
+              padding:10px 32px;
+              background:#10243f;
+              color:#e2edff;
+              font-size:12px;
+              display:flex;
+              justify-content:space-between;
+              gap:12px}
+              .cs-site .cs-top span{
+                opacity:.75;
+                margin-right:78px}
+                .cs-site .cs-header{
+                  padding:24px 32px;
+                  display:flex;
+                  gap:26px;
+                  align-items:center}
+                  .cs-site .cs-brand{
+                    font-weight:800;
+                    font-size:26px;
+                    letter-spacing:-1px;
+                    color:var(--cs-blue)}
+                    .cs-site .cs-brand small{
+                      display:block;
+                      color:var(--cs-muted);
+                      font-size:10px;
+                      font-weight:400;
+                      letter-spacing:0}
+                      .cs-site .cs-search{
+                        display:flex;
+                        gap:10px;
+                        align-items:center;
+                        margin-left:auto;
+                        max-width:390px;
+                        flex:1;
+                        background:var(--cs-soft);
+                        border-radius:8px;
+                        padding:0 14px;
+                        color:var(--cs-muted)}
+                        .cs-site .cs-search input{
+                          background:transparent;
+                          border:0;
+                          min-width:0;
+                          width:100%;
+                          color:var(--cs-ink);
+                          padding:14px 0;
+                          outline-offset:0}
+                          .cs-site .cs-search input::placeholder{
+                            color:var(--cs-muted)}
+                            .cs-site .cs-icon{
+                              padding:10px!important}
+                              .cs-site .cs-nav{
+                                border-block:1px solid var(--cs-line);
+                                padding:0 32px;
+                                display:flex;
+                                gap:28px;
+                                flex-wrap:wrap}
+                                .cs-site .cs-nav .cs-contact{
+                                  margin-left:auto;
+                                  color:var(--cs-blue);
+                                  font-weight:600}
+                                  .cs-site .cs-hero{
+                                    display:grid;
+                                    grid-template-columns:1.1fr 1fr;
+                                    padding:48px 36px 40px;
+                                    gap:18px;
+                                    background:linear-gradient(110deg,var(--cs-soft),var(--cs-paper))}
+                                    .cs-site .cs-eyebrow{
+                                      font-size:10px;
+                                      letter-spacing:1.5px;
+                                      font-weight:700;
+                                      color:var(--cs-blue)}
+                                      .cs-site h1{
+                                        font-size:46px;
+                                        line-height:1.08;
+                                        letter-spacing:-2px;
+                                        margin:16px 0 18px;
+                                        font-weight:700}
+                                        .cs-site p{
+                                          color:var(--cs-muted);
+                                          margin:0 0 20px;
+                                          max-width:410px}
+                                          .cs-site .cs-actions{
+                                            display:flex;
+                                            gap:14px;
+                                            flex-wrap:wrap}
+                                            .cs-site .cs-main{
+                                              background:var(--cs-blue);
+                                              color:white;
+                                              border-radius:7px;
+                                              padding:12px 16px;
+                                              font-weight:600}
+                                              .cs-site .cs-main:hover{
+                                                color:white;
+                                                filter:brightness(1.1)}
+                                                .cs-site .cs-secondary{
+                                                  padding:12px 10px}
+                                                  .cs-site .cs-art{
+                                                    position:relative;
+                                                    display:flex;
+                                                    align-items:center;
+                                                    justify-content:center;
+                                                    flex-direction:column;
+                                                    min-height:240px}
+                                                    .cs-site .cs-orbit{
+                                                      position:absolute;
+                                                      width:230px;
+                                                      height:230px;
+                                                      border-radius:50%;
+                                                      background:light-dark(#dceaff,#243d60)}
+                                                      .cs-site .cs-screen{
+                                                        position:relative;
+                                                        width:80%;
+                                                        max-width:300px;
+                                                        aspect-ratio:1.55;
+                                                        border:7px solid #17253a;
+                                                        border-bottom:14px solid #17253a;
+                                                        border-radius:10px;
+                                                        background:#0b2855;
+                                                        transform:rotate(-7deg);
+                                                        box-shadow:12px 15px 25px #10243f26;
+                                                        overflow:hidden}
+                                                        .cs-site .cs-wallpaper{
+                                                          position:absolute;
+                                                          inset:0;
+                                                          background:radial-gradient(ellipse at 80% 10%,#6ee7de 0,transparent 45%),linear-gradient(135deg,#0d2967,#327de4 55%,#084866)}
+                                                          .cs-site .cs-screen span{
+                                                            position:absolute;
+                                                            bottom:18px;
+                                                            left:18px;
+                                                            color:white;
+                                                            font-size:18px;
+                                                            line-height:1.25;
+                                                            font-weight:600}
+                                                            .cs-site .cs-base{
+                                                              width:90%;
+                                                              max-width:330px;
+                                                              height:14px;
+                                                              background:linear-gradient(#c1cddd,#73849b);
+                                                              border-radius:2px 2px 16px 16px;
+                                                              transform:rotate(-7deg);
+                                                              position:relative;
+                                                              margin-top:-2px}
+                                                              .cs-site .cs-art small{
+                                                                position:relative;
+                                                                color:var(--cs-muted);
+                                                                font-size:10px;
+                                                                margin-top:22px}
+                                                                .cs-site .cs-paths{
+                                                                  display:grid;
+                                                                  grid-template-columns:repeat(3,1fr);
+                                                                  gap:12px;
+                                                                  padding:24px 32px}
+                                                                  .cs-site .cs-paths button{
+                                                                    padding:15px;
+                                                                    background:var(--cs-soft);
+                                                                    border-radius:8px;
+                                                                    gap:13px}
+                                                                    .cs-site .cs-paths button>svg:first-child{
+                                                                      width:26px;
+                                                                      height:26px;
+                                                                      color:var(--cs-blue)}
+                                                                      .cs-site .cs-paths span{
+                                                                        flex:1;
+                                                                        font-weight:600}
+                                                                        .cs-site .cs-paths small{
+                                                                          display:block;
+                                                                          font-size:11px;
+                                                                          font-weight:400;
+                                                                          color:var(--cs-muted)}
+                                                                          .cs-site .cs-catalog{
+                                                                            padding:18px 32px 30px}
+                                                                            .cs-site .cs-sectionhead{
+                                                                              display:flex;
+                                                                              justify-content:space-between;
+                                                                              align-items:center;
+                                                                              gap:16px;
+                                                                              margin-bottom:20px}
+                                                                              .cs-site h2{
+                                                                                font-size:22px;
+                                                                                line-height:1.25;
+                                                                                margin:8px 0;
+                                                                                letter-spacing:-.5px}
+                                                                                .cs-site .cs-sectionhead>button{
+                                                                                  font-size:12px;
+                                                                                  color:var(--cs-blue);
+                                                                                  white-space:nowrap}
+                                                                                  .cs-site .cs-products{
+                                                                                    display:grid;
+                                                                                    grid-template-columns:repeat(3,minmax(0,1fr));
+                                                                                    gap:16px}
+                                                                                    .cs-site .cs-product{
+                                                                                      border:1px solid var(--cs-line);
+                                                                                      border-radius:10px;
+                                                                                      padding:16px;
+                                                                                      display:flex;
+                                                                                      flex-direction:column;
+                                                                                      min-width:0}
+                                                                                      .cs-site .cs-product .cs-drawing{
+                                                                                        background:var(--cs-soft);
+                                                                                        border-radius:6px;
+                                                                                        height:96px;
+                                                                                        display:flex;
+                                                                                        align-items:center;
+                                                                                        justify-content:center;
+                                                                                        color:var(--cs-muted);
+                                                                                        margin-bottom:14px;
+                                                                                        gap:12px}
+                                                                                        .cs-site .cs-drawing svg{
+                                                                                          width:46px;
+                                                                                          height:46px;
+                                                                                          stroke-width:1.2}
+                                                                                          .cs-site .cs-drawing small{
+                                                                                            font-size:10px;
+                                                                                            max-width:85px}
+                                                                                            .cs-site .cs-product h3{
+                                                                                              font-size:15px;
+                                                                                              line-height:1.4;
+                                                                                              margin:8px 0}
+                                                                                              .cs-site .cs-product p{
+                                                                                                font-size:12px;
+                                                                                                margin-bottom:14px}
+                                                                                                .cs-site .cs-product button{
+                                                                                                  margin-top:auto;
+                                                                                                  border-top:1px solid var(--cs-line);
+                                                                                                  color:var(--cs-blue);
+                                                                                                  font-size:12px;
+                                                                                                  justify-content:space-between}
+                                                                                                  .cs-site .cs-result{
+                                                                                                    font-size:12px;
+                                                                                                    margin-top:12px;
+                                                                                                    margin-bottom:0}
+                                                                                                    .cs-site .cs-quote{
+                                                                                                      margin:0 32px 30px;
+                                                                                                      padding:26px;
+                                                                                                      display:flex;
+                                                                                                      align-items:center;
+                                                                                                      justify-content:space-between;
+                                                                                                      gap:24px;
+                                                                                                      background:var(--cs-soft);
+                                                                                                      border-radius:10px}
+                                                                                                      .cs-site .cs-quote p{
+                                                                                                        margin-bottom:0;
+                                                                                                        font-size:12px}
+                                                                                                        .cs-site .cs-quote h2{
+                                                                                                          max-width:420px}
+                                                                                                          .cs-site .cs-quote button{
+                                                                                                            flex-shrink:0}
+                                                                                                            .cs-site .cs-footer{
+                                                                                                              border-top:1px solid var(--cs-line);
+                                                                                                              padding:20px 32px;
+                                                                                                              display:flex;
+                                                                                                              gap:16px;
+                                                                                                              flex-wrap:wrap;
+                                                                                                              font-size:11px;
+                                                                                                              color:var(--cs-muted)}
+                                                                                                              .cs-site .cs-footer strong{
+                                                                                                                color:var(--cs-blue);
+                                                                                                                margin-right:auto}
+                                                                                                                .cs-site .cs-footer small{
+                                                                                                                  width:100%;
+                                                                                                                  font-size:10px}
+                                                                                                                  .cs-site .cs-feedback{
+                                                                                                                    margin:0 32px 24px;
+                                                                                                                    padding:16px;
+                                                                                                                    border:1px solid var(--cs-line);
+                                                                                                                    border-radius:8px;
+                                                                                                                    background:var(--cs-paper);
+                                                                                                                    color:var(--cs-ink)}
+                                                                                                                    .cs-site [hidden]{
+                                                                                                                      display:none!important}
+                                                                                                                      .cs-site .cs-directhead{
+                                                                                                                        padding:36px 32px;
+                                                                                                                        display:grid;
+                                                                                                                        grid-template-columns:1.3fr 1fr;
+                                                                                                                        gap:28px}
+                                                                                                                        .cs-site .cs-directhead h1{
+                                                                                                                          font-size:40px}
+                                                                                                                          .cs-site .cs-advice{
+                                                                                                                            background:var(--cs-soft);
+                                                                                                                            padding:22px;
+                                                                                                                            border-radius:10px}
+                                                                                                                            .cs-site .cs-advice>svg{
+                                                                                                                              color:var(--cs-blue);
+                                                                                                                              width:24px;
+                                                                                                                              height:24px}
+                                                                                                                              .cs-site .cs-advice p{
+                                                                                                                                font-size:12px;
+                                                                                                                                margin-bottom:12px}
+                                                                                                                                @media(max-width:600px){
+                                                                                                                                  .cs-site{
+                                                                                                                                    min-height:1750px}
+                                                                                                                                    .cs-site .cs-top{
+                                                                                                                                      padding:10px 18px}
+                                                                                                                                      .cs-site .cs-top span{
+                                                                                                                                        display:none}
+                                                                                                                                        .cs-site .cs-header{
+                                                                                                                                          padding:20px 18px;
+                                                                                                                                          gap:10px;
+                                                                                                                                          flex-wrap:wrap}
+                                                                                                                                          .cs-site .cs-brand{
+                                                                                                                                            font-size:23px;
+                                                                                                                                            flex:1}
+                                                                                                                                            .cs-site .cs-search{
+                                                                                                                                              order:3;
+                                                                                                                                              flex-basis:100%;
+                                                                                                                                              max-width:none}
+                                                                                                                                              .cs-site .cs-search input{
+                                                                                                                                                font-size:16px}
+                                                                                                                                                .cs-site .cs-nav{
+                                                                                                                                                  padding:0 18px;
+                                                                                                                                                  gap:2px 20px}
+                                                                                                                                                  .cs-site .cs-nav .cs-contact{
+                                                                                                                                                    margin:0;
+                                                                                                                                                    width:100%;
+                                                                                                                                                    border-top:1px solid var(--cs-line)}
+                                                                                                                                                    .cs-site .cs-hero{
+                                                                                                                                                      grid-template-columns:1fr;
+                                                                                                                                                      padding:30px 20px 24px}
+                                                                                                                                                      .cs-site h1{
+                                                                                                                                                        font-size:38px}
+                                                                                                                                                        .cs-site .cs-art{
+                                                                                                                                                          min-height:225px}
+                                                                                                                                                          .cs-site .cs-paths{
+                                                                                                                                                            padding:20px 18px;
+                                                                                                                                                            grid-template-columns:1fr}
+                                                                                                                                                            .cs-site .cs-paths button{
+                                                                                                                                                              padding:12px 15px}
+                                                                                                                                                              .cs-site .cs-catalog{
+                                                                                                                                                                padding:16px 18px 24px}
+                                                                                                                                                                .cs-site .cs-sectionhead{
+                                                                                                                                                                  align-items:flex-start}
+                                                                                                                                                                  .cs-site h2{
+                                                                                                                                                                    font-size:20px}
+                                                                                                                                                                    .cs-site .cs-products{
+                                                                                                                                                                      grid-template-columns:1fr;
+                                                                                                                                                                      gap:12px}
+                                                                                                                                                                      .cs-site .cs-product{
+                                                                                                                                                                        display:grid;
+                                                                                                                                                                        grid-template-columns:80px 1fr;
+                                                                                                                                                                        column-gap:14px;
+                                                                                                                                                                        padding:12px}
+                                                                                                                                                                        .cs-site .cs-product .cs-drawing{
+                                                                                                                                                                          grid-row:1/5;
+                                                                                                                                                                          height:auto;
+                                                                                                                                                                          min-height:100px;
+                                                                                                                                                                          margin:0;
+                                                                                                                                                                          flex-direction:column;
+                                                                                                                                                                          gap:3px;
+                                                                                                                                                                          padding:8px}
+                                                                                                                                                                          .cs-site .cs-product h3{
+                                                                                                                                                                            margin:5px 0}
+                                                                                                                                                                            .cs-site .cs-product p{
+                                                                                                                                                                              margin-bottom:6px}
+                                                                                                                                                                              .cs-site .cs-quote{
+                                                                                                                                                                                margin:0 18px 24px;
+                                                                                                                                                                                padding:22px;
+                                                                                                                                                                                flex-direction:column;
+                                                                                                                                                                                align-items:flex-start;
+                                                                                                                                                                                gap:15px}
+                                                                                                                                                                                .cs-site .cs-footer{
+                                                                                                                                                                                  padding:20px 18px}
+                                                                                                                                                                                  .cs-site .cs-directhead{
+                                                                                                                                                                                    grid-template-columns:1fr;
+                                                                                                                                                                                    padding:28px 18px;
+                                                                                                                                                                                    gap:12px}
+                                                                                                                                                                                    .cs-site .cs-directhead h1{
+                                                                                                                                                                                      font-size:36px}
+                                                                                                                                                                                      .cs-site .cs-feedback{
+                                                                                                                                                                                        margin-inline:18px}
+                                                                                                                                                                                      }
+                                                                                                                                                                                      .cs-site .cs-symbol{
+                                                                                                                                                                                        font-size:20px;
+                                                                                                                                                                                        line-height:1;
+                                                                                                                                                                                        flex-shrink:0}
+                                                                                                                                                                                        .cs-site .cs-page-label{
+                                                                                                                                                                                          color:var(--cs-muted);
+                                                                                                                                                                                          font-size:12px}
+
+.cs-site .cs-product-link{margin-top:auto;border-top:1px solid var(--cs-line);color:var(--cs-blue);font-size:12px;display:block;padding:12px 0;text-decoration:none}
+.cs-site .cs-actions>a,.cs-site .cs-quote>a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.cs-site .cs-paths>a{display:flex;align-items:center;padding:15px;background:var(--cs-soft);border-radius:8px;gap:13px;color:var(--cs-ink);text-decoration:none}
