@@ -1,0 +1,18 @@
+[
+  {
+    "size": 73,
+    "id": 7707,
+    "width": 2,
+    "url": "/web/image/7707",
+    "name": "COMPUSUR-prueba-privada-odoo-image-test.png",
+    "public": false,
+    "height": 2,
+    "verified_binary": true,
+    "success": true,
+    "page_modified": false,
+    "mimetype": "image/png",
+    "website_id": 1,
+    "sha256": "6f67e7754c5c0c61b96ebb81717fe7724c75d1c7e4d7423fc75ac6f2b8cbad39",
+    "source": "tests/fixtures/odoo-image-test.png"
+  }
+]

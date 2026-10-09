@@ -28,6 +28,8 @@ El generador no crea plantillas QWeb instalables porque aún no se han elegido l
 
 ## Recursos
 
+Consulta [imágenes y estado de carga](IMAGENES-ODOO.md) antes de integrar imágenes. El MCP general conserva modo lectura; el MCP específico de imágenes ya tiene una prueba real de adjunto privado y lectura verificada. Insertar y comprobar la imagen en la página sigue siendo un paso separado.
+
 Guarda imágenes autorizadas en `src/assets/`. El generador las copia a `assets/media/`. En una fuente, utiliza esa ruta para la vista previa; al integrar, cambia la ruta al adjunto correspondiente de Odoo. El paquete admite imágenes y fuentes, pero no ejecutables ni documentos de clientes.
 
 Las fuentes y el ZIP deben inspeccionarse antes de traslado. La validación local es estructural; no valida la procedencia de todos los recursos ni sustituye la prueba funcional dentro de Odoo.

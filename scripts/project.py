@@ -32,7 +32,7 @@ def product_markup(export=False):
         if export:
             action = f'<a class="cs-product-link" href="{escape(row["url"], quote=True)}">{label} →</a>'
         else:
-            action = f'<button type="button" data-details="{escape(row["name"], quote=True)}" data-url="{escape(row["url"], quote=True)}">{label} →</button>'
+            action = f'<button class="cs-product-link" type="button" data-details="{escape(row["name"], quote=True)}" data-url="{escape(row["url"], quote=True)}">{label} →</button>'
         parts.append(f'''<article class="cs-product" data-product data-category="{escape(row['category'], quote=True)}">
   <div class="cs-drawing"><small>Imagen del producto pendiente</small></div>
   <div class="cs-eyebrow">{escape(row['category'])}</div>
@@ -46,11 +46,7 @@ def write(path, text):
     path.write_text(text, encoding='utf-8')
 
 def styles():
-    return read('styles/tokens.css') + '\n' + read('styles/site.css') + '''
-.cs-site .cs-product-link{margin-top:auto;border-top:1px solid var(--cs-line);color:var(--cs-blue);font-size:12px;display:block;padding:12px 0;text-decoration:none}
-.cs-site .cs-actions>a,.cs-site .cs-quote>a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
-.cs-site .cs-paths>a{display:flex;align-items:center;padding:15px;background:var(--cs-soft);border-radius:8px;gap:13px;color:var(--cs-ink);text-decoration:none}
-'''
+    return read('styles/tokens.css') + '\n' + read('styles/site.css')
 
 def source_assets():
     assets = []
@@ -85,9 +81,12 @@ def build():
         raise ValueError('Quedaron marcadores sin resolver')
     write(target / 'index.html', document)
     write(target / 'assets/tokens.css', read('styles/tokens.css'))
-    write(target / 'assets/site.css', styles().split(read('styles/tokens.css'),1)[1])
+    write(target / 'assets/site.css', read('styles/site.css'))
     write(target / 'assets/preview.js', read('scripts/preview.js'))
     copy_assets(target / 'assets/media')
+    fragment, css, assets = prepare_export()
+    validate_export(fragment, css, assets)
+    write(target / 'odoo.html', read('pages/odoo-preview.html').replace('{{EXPORT}}', fragment))
     print(f'Vista previa: {target / "index.html"}')
     return target
 

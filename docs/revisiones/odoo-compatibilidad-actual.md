@@ -1,6 +1,6 @@
 # Revisión local de compatibilidad con Odoo
 
-Fecha y hora de Lima: 2026-10-09T11:33:48-05:00
+Fecha y hora de Lima: 2026-10-09T11:37:55-05:00
 
 **Contrato local:** DRAFT_CONTRACT_PASSED
 
@@ -42,8 +42,33 @@ Las huellas de la ejecución están en el informe JSON junto a este archivo.
 - `src/blocks/inicio.html`
 - `src/data/products.sample.json`
 - `src/pages/index.html`
+- `src/pages/odoo-preview.html`
 - `src/partials/footer.html`
 - `src/partials/header.html`
 - `src/scripts/preview.js`
 - `src/styles/site.css`
 - `src/styles/tokens.css`
+
+## Revisi?n manual despu?s de las correcciones
+
+Se retiraron los estilos antiguos a?adidos por el exportador. Las categor?as usan las reglas de src/styles/site.css tanto como botones como enlaces. Las acciones de producto comparten cs-product-link y las reglas de la cabecera del cat?logo admiten ambos elementos. CSS de origen es ahora la ?nica fuente de presentaci?n del paquete.
+
+La nueva prueba local preview/odoo.html contiene el fragmento exportable exacto, sin JavaScript de demostraci?n. Su aviso superior no se exporta. Los enlaces /shop y /contactus requieren Odoo. No se cre? una p?gina de prueba en Odoo.
+
+Las seis pruebas del contrato y project.py check pasaron despu?s de los cambios. No se ha efectuado revisi?n visual en navegador. Foco, responsive y desbordamiento siguen pendientes de prueba renderizada.
+
+### Matriz actual
+
+| Elemento | Destino de integraci?n | Estado | Evidencia | Correcci?n pendiente |
+|---|---|---|---|---|
+| Inicio y CSS | Bloque de p?gina del sitio 1 y recurso CSS limitado a .cs-site | Preparado como borrador | Contrato aprobado; estilos unificados | Revisar aspecto y carga en tema real |
+| Fragmento de prueba | preview/odoo.html; despu?s p?gina aislada en Odoo | Preparado como borrador | Generado desde prepare_export; sin simulaciones | Ejecutar gu?a de prueba |
+| Cabecera y pie | Vistas del sitio 1: 5504 y 3506, seg?n lectura previa | Pendiente de verificaci?n en Odoo | Excluidos del ZIP | Revisar cadena efectiva y adaptaci?n separada |
+| Cat?logo y compra | Funciones nativas website_sale | Pendiente de verificaci?n en Odoo | Solo muestras y mensajes en vista previa | Vincular datos y probar recorrido |
+| Im?genes y marca | Adjuntos y campos de producto | Pendiente de verificaci?n en Odoo | No hay im?genes locales | A?adir originales autorizados |
+| Cotizaci?n | /contactus y receptor real | Pendiente de verificaci?n en Odoo | Enlace exportado; no env?o local | Probar destino y recepci?n |
+| Sitio, m?dulos, ficha HP y categor?as | Registros de Odoo | Verificado en Odoo | Consulta de lectura de la auditor?a previa del 9 de octubre, conservada en JSON | No implica prueba de UI ni compra; reconfirmar al integrar |
+
+La evidencia de Odoo de la auditor?a anterior se conserva en previous_odoo_read_evidence del JSON. No se repitieron esas consultas en esta correcci?n. El alcance de aquella evidencia se limita a registros: sitio 1, m?dulos SaaS 19.3, HP publicada con URL coincidente, categor?as 9/10/17 y vistas identificadas; no certifica edici?n, alojamiento, render ni funcionamiento comercial.
+
+Siguiente acci?n: seguir [la gu?a de prueba](../PRUEBA-INTEGRACION-ODOO.md), comenzando por revisi?n visual local y comprobaci?n de aislamiento/recursos en el destino. No hay bloqueos del contrato local; la integraci?n y publicaci?n contin?an pendientes.

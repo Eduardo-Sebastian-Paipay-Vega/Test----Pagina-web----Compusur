@@ -24,8 +24,8 @@
 .cs-site .cs-top { padding:8px 5%; background:var(--cs-ink); color:white; display:flex; justify-content:space-between; gap:16px; font-size:12px; }
 .cs-site .cs-top span { color:#d0dfef; }
 .cs-site .cs-header { display:flex; align-items:center; gap:32px; padding:25px 5%; }
-.cs-site .cs-brand { color:var(--cs-blue); font-size:29px; font-weight:850; letter-spacing:-1.4px; line-height:1.2; }
-.cs-site .cs-brand small { display:block; font-size:11px; font-weight:400; letter-spacing:0; margin-top:5px; color:var(--cs-muted); }
+.cs-site .cs-brand { display:block; flex-shrink:0; width:260px; max-width:100%; }
+.cs-site .cs-brand img { display:block; width:100%; height:auto; }
 .cs-site .cs-search { display:flex; align-items:center; gap:12px; flex:1; max-width:470px; margin-left:auto; border:1px solid var(--cs-line); border-radius:30px; padding:0 18px; background:var(--cs-soft); }
 .cs-site .cs-search input { width:100%; min-width:0; border:0; padding:12px 0; background:transparent; color:var(--cs-ink); }
 .cs-site .cs-search input::placeholder { color:var(--cs-muted); }
@@ -62,7 +62,7 @@
 .cs-site .cs-catalog { padding:22px 5% 54px; scroll-margin-top:20px; }
 .cs-site .cs-sectionhead { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:28px; }
 .cs-site h2 { font-size:clamp(26px,3vw,38px); line-height:1.15; letter-spacing:-1px; font-weight:700; margin:8px 0; }
-.cs-site .cs-sectionhead > button { color:var(--cs-blue); white-space:nowrap; font-size:14px; }
+.cs-site .cs-sectionhead > button, .cs-site .cs-sectionhead > a { min-height:44px; padding:10px 0; text-decoration:none; color:var(--cs-blue); white-space:nowrap; font-size:14px; }
 .cs-site .cs-products { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
 .cs-site .cs-product { display:flex; flex-direction:column; min-width:0; }
 .cs-site .cs-drawing { height:165px; border-radius:12px; background:var(--cs-soft); display:grid; place-items:center; color:var(--cs-muted); margin-bottom:18px; border:1px dashed #c1cede; }
@@ -70,7 +70,7 @@
 .cs-site .cs-product .cs-eyebrow { font-size:12px; }
 .cs-site .cs-product h3 { font-size:20px; line-height:1.3; margin:6px 0 10px; letter-spacing:-.5px; }
 .cs-site .cs-product p { font-size:14px; margin-bottom:20px; }
-.cs-site .cs-product > button { margin-top:auto; border-top:1px solid var(--cs-line); color:var(--cs-blue); font-size:13px; font-weight:650; padding-block:14px; }
+.cs-site .cs-product-link { display:block; min-height:44px; text-decoration:none; margin-top:auto; border-top:1px solid var(--cs-line); color:var(--cs-blue); font-size:13px; font-weight:650; padding-block:14px; }
 .cs-site .cs-result { font-size:12px; margin-top:20px; }
 .cs-site .cs-quote { margin:0 5% 56px; padding:38px 42px; display:flex; align-items:center; justify-content:space-between; gap:32px; border-radius:16px; background:#e8f2fc; }
 .cs-site .cs-quote h2 { max-width:620px; font-size:30px; }
@@ -100,7 +100,7 @@
  .cs-site .cs-top { font-size:10px; }
  .cs-site .cs-top > span { white-space:nowrap; }
  .cs-site .cs-header { flex-wrap:wrap; padding-block:20px; gap:18px; }
- .cs-site .cs-brand { font-size:25px; }
+ .cs-site .cs-brand { width:210px; }
  .cs-site .cs-icon { margin-left:auto; }
  .cs-site .cs-search { order:3; max-width:none; flex-basis:100%; }
  .cs-site .cs-nav { gap:8px 22px; flex-wrap:wrap; padding-block:6px; }
@@ -120,7 +120,7 @@
  .cs-site .cs-paths > button, .cs-site .cs-paths > a { padding-block:14px; }
  .cs-site .cs-paths small { font-size:12px; }
  .cs-site .cs-sectionhead { align-items:start; gap:15px; }
- .cs-site .cs-sectionhead > button { white-space:normal; min-width:65px; }
+ .cs-site .cs-sectionhead > button, .cs-site .cs-sectionhead > a { white-space:normal; min-width:65px; }
  .cs-site .cs-products { grid-template-columns:1fr; gap:30px; }
  .cs-site .cs-drawing { height:175px; }
  .cs-site .cs-catalog { padding-bottom:28px; }
@@ -130,7 +130,3 @@
 @media (prefers-reduced-motion:reduce) {
  .cs-site *, .cs-site *::before, .cs-site *::after { scroll-behavior:auto; transition:none; animation:none; }
 }
-
-.cs-site .cs-product-link{margin-top:auto;border-top:1px solid var(--cs-line);color:var(--cs-blue);font-size:12px;display:block;padding:12px 0;text-decoration:none}
-.cs-site .cs-actions>a,.cs-site .cs-quote>a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
-.cs-site .cs-paths>a{display:flex;align-items:center;padding:15px;background:var(--cs-soft);border-radius:8px;gap:13px;color:var(--cs-ink);text-decoration:none}
