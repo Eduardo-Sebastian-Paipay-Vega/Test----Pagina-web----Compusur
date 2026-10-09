@@ -4,6 +4,8 @@ Al diseñar, construir o exportar contenido de esta carpeta, lee `.agents/skills
 
 ## Selección de skills
 
+- Verificación de compatibilidad real/importación de la página actual: `.agents/skills/verificar-odoo/SKILL.md`. Diagnosticar y documentar sin publicar. Distinguir contrato local y capacidades de Odoo.
+
 - Dirección visual habitual: `.agents/skills/frontend-design/SKILL.md`.
 - Alternativa cuando se elija la variante para Codex: `.agents/skills/codex-frontend-design/SKILL.md`. Usa una dirección de diseño por tarea; no cargar ambas por defecto.
 - Auditoría de UX/accesibilidad solicitada o revisión pertinente: `.agents/skills/web-design-guidelines/SKILL.md`.

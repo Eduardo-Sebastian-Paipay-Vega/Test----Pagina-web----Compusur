@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-09T11:33:48-05:00",
+  "local_status": "DRAFT_CONTRACT_PASSED",
+  "odoo_status": "NOT_VERIFIED_IN_ODOO",
+  "publish_ready": false,
+  "scope": "Fuentes locales actuales de compusur-web; no consulta la web publicada ni el backend.",
+  "errors": [],
+  "pending": [
+    "Verificar características y destinos actuales de los productos de muestra; las verificaciones guardadas no son comprobaciones de esta ejecución.",
+    "Completar imágenes reales: el inicio exportable todavía contiene marcadores de imagen.",
+    "Probar inserción, recursos, permisos y herencias del tema dentro de Odoo, sitio COMPUSUR 1.",
+    "Conectar precios, imágenes, stock, búsqueda y carrito a funciones nativas; las muestras son estáticas.",
+    "Verificar destino y recepción real de cotizaciones; el prototipo no envía consultas.",
+    "Confirmar datos comerciales pendientes antes de publicarlos.",
+    "Revisar el resultado en escritorio, tablet y móvil; no se ejecutó revisión visual en este comando.",
+    "Medir carga real y comportamiento de recursos dentro de Odoo; el tamaño local no demuestra velocidad."
+  ],
+  "excluded_runtime_sources": [
+    "src/scripts/preview.js"
+  ],
+  "sample_products": [
+    {
+      "name": "HP 15-GW0013LA",
+      "url": "/shop/tmvfm-portatil-hp-15-gw0013la-15-6-fhd-ryzen-7-3700u-10",
+      "previously_verified_product_url": true
+    },
+    {
+      "name": "ASUS TUF Gaming F16",
+      "url": "/shop",
+      "previously_verified_product_url": false
+    },
+    {
+      "name": "HP DesignJet T950",
+      "url": "/shop",
+      "previously_verified_product_url": false
+    }
+  ],
+  "source_sha256": {
+    "src/assets/README.md": "7075fdce86e008eb12153e7390a83fb13c6c6970319afc1839f8a2878140e831",
+    "src/blocks/inicio.html": "071bdb82130b77ab8c111d6e92bb7285b1ddbb22b7f46ef7835fafee53996697",
+    "src/data/products.sample.json": "09ca7ba93688c9ec67725f5fe4e1bd7303e31d378e9c336f923e3cdec066e5c2",
+    "src/pages/index.html": "a69927440b8dba714862ff4378c4b125fd49757465312d526d5aa271316d6953",
+    "src/partials/footer.html": "b8a5d70ee4c3ce823b42ef7e2eaa29360cc9a65cc08f8bf304705fc4a0ff2b03",
+    "src/partials/header.html": "0436d46c64985f310d35f371cfaba6e7d168ce7fb91559acd8ba14b59147655b",
+    "src/scripts/preview.js": "f3f7f1f5c90e1398997c37c1e284684dc04deacea19ce7b0680e4aa3f92c87f6",
+    "src/styles/site.css": "6cbd98f303c51a84e915b9ed015c4f1ceb0fea06ddd5a3d0f2c1e3f65a1d65ce",
+    "src/styles/tokens.css": "41484721b8856ed070449f03640a671a415ac5b867cf0a791305821c9198d4be"
+  }
+}

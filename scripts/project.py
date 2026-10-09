@@ -91,7 +91,7 @@ def build():
     print(f'Vista previa: {target / "index.html"}')
     return target
 
-def export_odoo():
+def prepare_export():
     home = read('blocks/inicio.html').replace('{{PRODUCTS}}', product_markup(export=True))
     category_urls={'Todos':'/shop','Laptops':'/shop/category/laptops-9','Computadoras':'/shop/category/computadoras-10','Monitores':'/shop/category/monitor-17'}
     def replace_button(match):
@@ -108,6 +108,10 @@ def export_odoo():
     fragment = '<!-- BORRADOR DE DISEÑO: revisar contenido y recursos antes de publicar. -->\n<section class="cs-site" aria-label="Inicio COMPUSUR propuesto">\n'+home+'\n</section>\n'
     css = styles()
     assets = source_assets()
+    return fragment, css, assets
+
+def export_odoo():
+    fragment, css, assets = prepare_export()
     # Obligatorio para export y check: no escribir ni reemplazar el ZIP si falla.
     validate_export(fragment, css, assets)
     target = ROOT / 'dist/odoo'

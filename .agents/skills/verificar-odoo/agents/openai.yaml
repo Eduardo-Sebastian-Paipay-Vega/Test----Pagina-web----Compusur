@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verificar Odoo · COMPUSUR"
+  short_description: "Compatibilidad del diseño e integración real con Odoo"
+  default_prompt: "Usa $verificar-odoo para revisar la página actual, detectar límites de exportación y documentar qué falta comprobar dentro de Odoo."

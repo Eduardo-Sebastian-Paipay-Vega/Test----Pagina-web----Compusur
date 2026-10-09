@@ -51,9 +51,9 @@ def main():
         current = hashlib.sha256((folder / 'SKILL.md').read_bytes()).hexdigest()
         if current != source['adapted_sha256']:
             print('Cambio local desde la configuración inicial: ' + source['skill'])
-    expected = {'compusur-odoo-design','frontend-design','codex-frontend-design','web-design-guidelines','react-best-practices'}
+    expected = {'compusur-odoo-design','frontend-design','codex-frontend-design','web-design-guidelines','react-best-practices','verificar-odoo'}
     if names != expected:
-        errors.append('La selección instalada no coincide con las cinco skills previstas')
+        errors.append('La selección instalada no coincide con las seis skills previstas')
     if errors:
         raise SystemExit('\n'.join(errors))
     print('Skills verificadas: nombres únicos, referencias y originales correctos.')

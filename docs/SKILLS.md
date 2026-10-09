@@ -5,6 +5,7 @@ Instalación local del 9 de octubre de 2026 en `.agents/skills/`, dentro de `com
 | Invocación | Función en COMPUSUR | Uso |
 |---|---|---|
 | `$compusur-odoo-design` | Estructura, exportación y límites de integración | Base común al trabajar esta biblioteca |
+| `$verificar-odoo` | Diagnóstico de la página actual y preparación real para Odoo | Al pedir revisión de compatibilidad o preparación de importación |
 | `$frontend-design` | Identidad visual, jerarquía, tipografía y contenido | Dirección visual habitual |
 | `$codex-frontend-design` | Variante de composición y revisión visual para Codex | Alternativa al diseñador anterior |
 | `$web-design-guidelines` | UX, accesibilidad, controles y presentación adaptable | Revisiones pertinentes o auditorías solicitadas |
@@ -34,6 +35,12 @@ Se utilizó el instalador de skills de Codex con revisiones concretas, sin ejecu
 El registro `.agents/skills/sources.lock.json` contiene revisiones y huellas SHA-256 de las entradas originales y de la adaptación inicial. También registra la versión de la copia local de las directrices de interfaz de Vercel. Una revisión con acceso a internet consulta su versión oficial actual; si usa la copia, debe indicar su fecha.
 
 ## Cómo usarlas
+
+Para revisar compatibilidad en cualquier momento:
+
+> Usa $verificar-odoo para revisar la página actual y decirme qué está preparado, qué no puede exportarse y qué requiere validación dentro de Odoo.
+
+La skill guarda el diagnóstico en `docs/revisiones/odoo-compatibilidad-actual.md`. Su comprobación automática puede ejecutarse con `python scripts/audit_odoo.py --report`; la revisión completa de Codex incluye análisis manual, navegador y evidencia del entorno cuando estén disponibles. Ejecutar solo el script no equivale a verificar toda la integración.
 
 Abre esta carpeta como proyecto de Codex, o indica que debe trabajar dentro de ella y seguir su `AGENTS.md`. Las nuevas skills estarán disponibles para descubrimiento en el siguiente turno cuando este proyecto esté en el alcance de Codex; si la lista de la interfaz no se actualiza, abre una nueva sesión en `compusur-web`. Los archivos también pueden leerse directamente por su ruta.
 
