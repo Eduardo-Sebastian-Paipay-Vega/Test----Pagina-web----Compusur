@@ -12,6 +12,8 @@ La instalación auditada es Odoo SaaS 19.3. El sitio objetivo es COMPUSUR, `webs
 
 El ZIP no se instala como módulo en Odoo Online y no se importa como CSV/XLSX. «Importable» significa que el contenido está separado para adaptarlo a los bloques y vistas disponibles del sitio. La forma concreta de inserción debe comprobarse con el editor y permisos actuales. No se afirma que basta subir el ZIP para publicar.
 
+Consulta [el contrato de compatibilidad](COMPATIBILIDAD-ODOO.md). La validación es obligatoria también al ejecutar `export`; no solo cuando se pide `check`.
+
 ## Pasos de integración
 
 1. Seleccionar los bloques revisados y confirmar el contenido comercial que utilicen.

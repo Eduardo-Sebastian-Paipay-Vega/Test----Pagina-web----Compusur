@@ -52,6 +52,8 @@ python scripts/project.py export
 
 La exportación incluye solo el contenido de inicio y CSS de alcance limitado. No reemplaza la cabecera global ni el carrito de Odoo. La búsqueda y los botones de demostración se excluyen; los accesos exportados utilizan enlaces locales a categorías o contacto. Las tarjetas son muestras estáticas y requieren sustitución por contenido real antes de publicar.
 
+El [contrato de compatibilidad](docs/COMPATIBILIDAD-ODOO.md) se valida antes de generar cualquier exportación. Esto limita lo que se empaqueta; la compatibilidad final con el tema se comprueba dentro de Odoo.
+
 ## Control de cambios
 
 Esta carpeta pertenece al repositorio Git existente de `Proyecto oddo`. Las fuentes se pueden comparar y guardar en versiones desde VS Code; no se creó un segundo repositorio ni se hizo un commit. Los resultados generados están excluidos mediante `.gitignore`.

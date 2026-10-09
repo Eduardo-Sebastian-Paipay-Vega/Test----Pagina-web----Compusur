@@ -1,5 +1,7 @@
 {
   "status": "draft",
+  "validation": "local-static-contract-v1",
+  "odoo_compatibility": "pending-in-odoo-review",
   "target": "COMPUSUR website_id=1",
   "format": "HTML fragment + scoped CSS; not an installable Odoo module",
   "contains_live_connection": false,

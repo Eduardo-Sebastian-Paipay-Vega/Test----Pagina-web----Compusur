@@ -18,6 +18,8 @@ La raíz del proyecto es la carpeta que contiene `compusur-web.code-workspace`. 
 
 Lee `docs/ODOO.md` al exportar o planificar integración. Ejecuta `python scripts/project.py check` después de cambiar el exportador, el contenido exportable o los recursos. El ZIP es un paquete de diseño en borrador, no un módulo instalable ni una importación de productos.
 
+Consulta [el contrato de compatibilidad](../../../docs/COMPATIBILIDAD-ODOO.md). `export` valida obligatoriamente el contenido antes de generar el paquete. No quitar esa comprobación para incluir frameworks, código de servidor, controles de demostración, CSS global o recursos no portables. Para una función fuera del contrato, preparar una integración específica según la solicitud; no suponer que será importable por subir los archivos. La compatibilidad final sigue pendiente hasta revisar el resultado dentro de Odoo.
+
 La conexión existente corresponde a COMPUSUR, sitio 1; la base tiene otro sitio. Al implementar una solicitud autorizada, identificar las vistas efectivas e inherited views del sitio objetivo, respaldar sus campos y verificar el resultado público. Una página sin publicar no aísla cambios en cabeceras o CSS globales.
 
 Precios, stock, búsqueda comercial y compra deben conectarse a Odoo, en lugar de convertir la muestra estática en una segunda base de datos. El destino del formulario de cotización debe comprobarse antes de anunciar recepción de consultas. No exportes el JavaScript de demostración como lógica comercial.

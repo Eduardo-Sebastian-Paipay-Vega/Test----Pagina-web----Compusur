@@ -4,6 +4,7 @@ from html import escape
 from html.parser import HTMLParser
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from functools import partial
+from export_policy import ASSET_EXTENSIONS, validate_asset, validate_export
 import argparse
 import hashlib
 import json
@@ -51,16 +52,26 @@ def styles():
 .cs-site .cs-paths>a{display:flex;align-items:center;padding:15px;background:var(--cs-soft);border-radius:8px;gap:13px;color:var(--cs-ink);text-decoration:none}
 '''
 
-def copy_assets(destination):
-    copied = []
+def source_assets():
+    assets = []
+    asset_root = SRC / 'assets'
+    if asset_root.is_symlink():
+        raise ValueError('La carpeta de recursos no puede ser un enlace externo')
     for source in (SRC / 'assets').rglob('*'):
         if not source.is_file() or source.name == 'README.md':
             continue
-        if source.suffix.lower() not in {'.png','.jpg','.jpeg','.webp','.avif','.svg','.woff','.woff2'}:
+        if source.suffix.lower() not in ASSET_EXTENSIONS:
             raise ValueError(f'Recurso no permitido en el paquete: {source.name}')
         if source.is_symlink():
             raise ValueError('No se empaquetan recursos enlazados fuera del proyecto')
-        target = destination / source.relative_to(SRC / 'assets')
+        source.resolve().relative_to(asset_root.resolve())
+        assets.append((source.relative_to(asset_root), source))
+    return assets
+
+def copy_assets(destination, assets=None):
+    copied = []
+    for relative, source in source_assets() if assets is None else assets:
+        target = destination / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
         copied.append(target)
@@ -95,11 +106,15 @@ def export_odoo():
         return f'<a{class_attr} href="{url}">{body}</a>'
     home = re.sub(r'<button\b([^>]*)>(.*?)</button>',replace_button,home,flags=re.S)
     fragment = '<!-- BORRADOR DE DISEÑO: revisar contenido y recursos antes de publicar. -->\n<section class="cs-site" aria-label="Inicio COMPUSUR propuesto">\n'+home+'\n</section>\n'
+    css = styles()
+    assets = source_assets()
+    # Obligatorio para export y check: no escribir ni reemplazar el ZIP si falla.
+    validate_export(fragment, css, assets)
     target = ROOT / 'dist/odoo'
     write(target / 'inicio.fragment.html', fragment)
-    write(target / 'compusur.css', styles())
-    current_assets = copy_assets(target / 'assets/media')
-    manifest = {'status':'draft','target':'COMPUSUR website_id=1','format':'HTML fragment + scoped CSS; not an installable Odoo module','contains_live_connection':False,'unresolved':['Logotipo original','Imágenes reales de productos','Vinculación dinámica a precios/stock','Verificación de características y enlaces de productos','Destino real de cotizaciones'],'files':{}}
+    write(target / 'compusur.css', css)
+    current_assets = copy_assets(target / 'assets/media', assets)
+    manifest = {'status':'draft','validation':'local-static-contract-v1','odoo_compatibility':'pending-in-odoo-review','target':'COMPUSUR website_id=1','format':'HTML fragment + scoped CSS; not an installable Odoo module','contains_live_connection':False,'unresolved':['Logotipo original','Imágenes reales de productos','Vinculación dinámica a precios/stock','Verificación de características y enlaces de productos','Destino real de cotizaciones'],'files':{}}
     package_files = [target/'inicio.fragment.html',target/'compusur.css'] + current_assets
     for path in package_files:
         manifest['files'][path.relative_to(target).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
