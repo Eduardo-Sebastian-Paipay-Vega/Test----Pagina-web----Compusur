@@ -1,0 +1,47 @@
+{
+  "configured_on": "2026-10-09",
+  "scope": "project only",
+  "sources": [
+    {
+      "skill": "frontend-design",
+      "repo": "anthropics/skills",
+      "commit": "9d630808e4add0a7146de4af9384155d5dee350a",
+      "path": "skills/frontend-design",
+      "source_url": "https://github.com/anthropics/skills/tree/9d630808e4add0a7146de4af9384155d5dee350a/skills/frontend-design",
+      "original_sha256": "b8009ae690dfa69edc7f08bb8715f32db8817112cfa4388741dbaf876c237df8",
+      "adapted_sha256": "deb3b8fa40aca8516775848c936ff2b476b60efd2f07087d47882243c412a210"
+    },
+    {
+      "skill": "codex-frontend-design",
+      "repo": "dobromirdikov/codex-frontend-design-skill",
+      "commit": "983119775a936d123df9fbfbc3821bdee5bb58fd",
+      "path": "skills/frontend-design",
+      "source_url": "https://github.com/dobromirdikov/codex-frontend-design-skill/tree/983119775a936d123df9fbfbc3821bdee5bb58fd/skills/frontend-design",
+      "original_sha256": "f7ea0db2759232138eb00992f15248edf1da8d5e6b8edc307c387bf59e6f8305",
+      "adapted_sha256": "1c4f08c62af9c0263e0befc4da7b5b616e91c0ed61250ab8b84afb153ec73713"
+    },
+    {
+      "skill": "web-design-guidelines",
+      "repo": "vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "path": "skills/web-design-guidelines",
+      "source_url": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/web-design-guidelines",
+      "original_sha256": "17e48da905f83a19c174079b50760a98c069527ba50079239b3c187236627c29",
+      "adapted_sha256": "a76fa468b167641d03f35120e4bb585e97185ea52294aee96d6ed040d92858cf"
+    },
+    {
+      "skill": "react-best-practices",
+      "repo": "vercel-labs/agent-skills",
+      "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "path": "skills/react-best-practices",
+      "source_url": "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices",
+      "original_sha256": "3286ace648b4d740317b9c1cb7fbd38600eaacc62a8b57ea5e06fd2992b5582e",
+      "adapted_sha256": "488343cdcf8d0d6765f000680cceec06e633e133453309e1da8294f14b820ae1"
+    }
+  ],
+  "guidelines_snapshot": {
+    "repo": "vercel-labs/web-interface-guidelines",
+    "commit": "434b7f91364665f2f733b310ec54809bf8f37937",
+    "path": "command.md"
+  }
+}

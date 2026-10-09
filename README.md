@@ -58,4 +58,10 @@ Esta carpeta pertenece al repositorio Git existente de `Proyecto oddo`. Las fuen
 
 La habilidad local está en `.agents/skills/compusur-odoo-design/SKILL.md` y se referencia desde `AGENTS.md`. No se instaló una habilidad global ni se modificó la configuración de conexión. Puedes pedir a Codex que la use al trabajar en esta carpeta.
 
+También están instaladas cuatro skills de diseño y revisión adaptadas al proyecto. Consulta [uso de las skills](docs/SKILLS.md). Para comprobar su estructura y procedencia:
+
+```powershell
+python scripts/check_skills.py
+```
+
 Consulta [integración en Odoo](docs/ODOO.md) antes de importar y [contenido pendiente](docs/CONTENIDO.md) antes de publicar.

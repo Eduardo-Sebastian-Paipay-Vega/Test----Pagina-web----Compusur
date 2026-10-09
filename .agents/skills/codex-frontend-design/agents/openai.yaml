@@ -1,4 +1,4 @@
 interface:
-  display_name: "Frontend Design"
-  short_description: "Polished frontend design and visual QA"
-  default_prompt: "Use $frontend-design to design, build, polish, and browser-check a distinctive frontend interface."
+  display_name: "Codex Frontend Design · COMPUSUR"
+  short_description: "Diseño y revisión visual adaptados a Odoo"
+  default_prompt: "Usa $codex-frontend-design para mejorar y revisar visualmente COMPUSUR respetando su integración con Odoo."
