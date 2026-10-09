@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diseño integral Odoo · COMPUSUR"
+  short_description: "Coordina páginas, diseño y límites de Odoo"
+  default_prompt: "Usa $diseno-integral-odoo para revisar el mapa de páginas, mantener un diseño coherente y coordinar las skills necesarias para el siguiente cambio."

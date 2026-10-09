@@ -1,0 +1,85 @@
+{
+  "site": [
+    {
+      "domain": "https://www.compusur.pe",
+      "id": 1,
+      "name": "COMPUSUR"
+    }
+  ],
+  "modules": [
+    {
+      "id": 1327,
+      "installed_version": "saas~19.3.1.0",
+      "name": "website",
+      "state": "installed"
+    },
+    {
+      "id": 1385,
+      "installed_version": "saas~19.3.1.1",
+      "name": "website_sale",
+      "state": "installed"
+    },
+    {
+      "id": 106,
+      "installed_version": "saas~19.3.1.3",
+      "name": "base",
+      "state": "installed"
+    }
+  ],
+  "hp": [
+    {
+      "id": 10,
+      "name": "PORTÁTIL HP 15-GW0013LA, 15.6″ FHD, RYZEN 7-3700U",
+      "website_published": true,
+      "website_url": "/shop/tmvfm-portatil-hp-15-gw0013la-15-6-fhd-ryzen-7-3700u-10"
+    }
+  ],
+  "views": [
+    {
+      "active": true,
+      "id": 593,
+      "inherit_id": false,
+      "key": "website.homepage",
+      "website_id": [
+        1,
+        "COMPUSUR"
+      ]
+    },
+    {
+      "active": true,
+      "id": 596,
+      "inherit_id": [
+        541,
+        "Main Frontend Layout"
+      ],
+      "key": "website.layout",
+      "website_id": false
+    },
+    {
+      "active": true,
+      "id": 5504,
+      "inherit_id": [
+        596,
+        "Main layout"
+      ],
+      "key": "website.template_header_sales_one",
+      "website_id": [
+        1,
+        "COMPUSUR"
+      ]
+    },
+    {
+      "active": true,
+      "id": 3506,
+      "inherit_id": [
+        596,
+        "Main layout"
+      ],
+      "key": "website.template_footer_headline",
+      "website_id": [
+        1,
+        "COMPUSUR"
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@ from html.parser import HTMLParser
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from functools import partial
 from export_policy import ASSET_EXTENSIONS, validate_asset, validate_export
+from urllib.parse import urlsplit
 import argparse
 import hashlib
 import json
@@ -28,13 +29,13 @@ def products():
 def product_markup(export=False):
     parts = []
     for row in products():
-        label = 'Ver ficha y precio' if row['verified_product_url'] else 'Consultar catálogo'
+        label = 'Ver ficha del producto' if row['verified_product_url'] else 'Consultar catálogo'
         if export:
             action = f'<a class="cs-product-link" href="{escape(row["url"], quote=True)}">{label} →</a>'
         else:
             action = f'<button class="cs-product-link" type="button" data-details="{escape(row["name"], quote=True)}" data-url="{escape(row["url"], quote=True)}">{label} →</button>'
         parts.append(f'''<article class="cs-product" data-product data-category="{escape(row['category'], quote=True)}">
-  <div class="cs-drawing"><small>Imagen del producto pendiente</small></div>
+  <div class="cs-drawing"><small>Fotografía oficial pendiente</small></div>
   <div class="cs-eyebrow">{escape(row['category'])}</div>
   <h3>{escape(row['name'])}</h3><p>{escape(row['specs'])}</p>
   {action}
@@ -47,6 +48,47 @@ def write(path, text):
 
 def styles():
     return read('styles/tokens.css') + '\n' + read('styles/site.css')
+
+def build_page_previews(target):
+    """Construye esqueletos navegables locales; no participa en el paquete Odoo."""
+    pages = json.loads(read('data/pages.sample.json'))
+    for page in pages:
+        slug = page['slug']
+        if not re.fullmatch(r'[a-z0-9-]+', slug):
+            raise ValueError('Ruta de página local no válida')
+        sections = ''.join(
+            '<section class="cs-page-panel"><h2>' + escape(title) +
+            '</h2><p>Contenido pendiente de diseño y confirmación.</p></section>'
+            for title in page['sections']
+        )
+        body = (
+            '<div class="cs-page-main"><p class="cs-eyebrow">' + escape(page['eyebrow']) +
+            '</p><h1>' + escape(page['title']) + '</h1><p class="cs-page-intro">' +
+            escape(page['description']) + '</p><p class="cs-page-route">Destino previsto en Odoo: <code>' +
+            escape(page['odoo_path']) + '</code></p><div class="cs-page-panels">' + sections +
+            '</div><a class="cs-main" href="' + escape(page['action_path'], quote=True) + '">' +
+            escape(page['action']) + '</a></div>'
+        )
+        document = read('pages/index.html').replace('{{HEADER}}', read('partials/header.html')).replace(
+            '{{HOME}}', body).replace('{{FOOTER}}', read('partials/footer.html'))
+        document = document.replace('href="assets/', 'href="../assets/').replace('src="assets/', 'src="../assets/')
+        document = document.replace('<title>COMPUSUR — propuesta local</title>',
+                                    '<title>COMPUSUR — ' + escape(page['title']) + ' · borrador local</title>')
+        if re.search(r'\{\{[A-Z_]+\}\}', document):
+            raise ValueError('Quedaron marcadores sin resolver en ' + slug)
+        write(target / 'paginas' / (slug + '.html'), document)
+        # Alias legibles para revisar cada pantalla en el navegador local:
+        # /nosotros/, /catalogo/, etc. No representan rutas de producción Odoo.
+        write(target / slug / 'index.html', document)
+
+def build_404_preview(target):
+    body = '<main class="cs-page-main">' + read('pages/404.html') + '</main>'
+    document = read('pages/index.html').replace('{{HEADER}}', read('partials/header.html')).replace(
+        '{{HOME}}', body).replace('{{FOOTER}}', read('partials/footer.html'))
+    document = document.replace('href="assets/', 'href="/assets/').replace('src="assets/', 'src="/assets/')
+    document = document.replace('<title>COMPUSUR — propuesta local</title>',
+                                '<title>COMPUSUR — Página no encontrada</title>')
+    write(target / '404.html', document)
 
 def source_assets():
     assets = []
@@ -84,6 +126,8 @@ def build():
     write(target / 'assets/site.css', read('styles/site.css'))
     write(target / 'assets/preview.js', read('scripts/preview.js'))
     copy_assets(target / 'assets/media')
+    build_page_previews(target)
+    build_404_preview(target)
     fragment, css, assets = prepare_export()
     validate_export(fragment, css, assets)
     write(target / 'odoo.html', read('pages/odoo-preview.html').replace('{{EXPORT}}', fragment))
@@ -104,6 +148,9 @@ def prepare_export():
         class_attr = f' class="{cls.group(1)}"' if cls else ''
         return f'<a{class_attr} href="{url}">{body}</a>'
     home = re.sub(r'<button\b([^>]*)>(.*?)</button>',replace_button,home,flags=re.S)
+    local_routes = {'/catalogo/':'/shop','/cotizacion/':'/contactus'}
+    for local_path, odoo_path in local_routes.items():
+        home = home.replace('href="' + local_path + '"', 'href="' + odoo_path + '"')
     fragment = '<!-- BORRADOR DE DISEÑO: revisar contenido y recursos antes de publicar. -->\n<section class="cs-site" aria-label="Inicio COMPUSUR propuesto">\n'+home+'\n</section>\n'
     css = styles()
     assets = source_assets()
@@ -117,7 +164,7 @@ def export_odoo():
     write(target / 'inicio.fragment.html', fragment)
     write(target / 'compusur.css', css)
     current_assets = copy_assets(target / 'assets/media', assets)
-    manifest = {'status':'draft','validation':'local-static-contract-v1','odoo_compatibility':'pending-in-odoo-review','target':'COMPUSUR website_id=1','format':'HTML fragment + scoped CSS; not an installable Odoo module','contains_live_connection':False,'unresolved':['Logotipo original','Imágenes reales de productos','Vinculación dinámica a precios/stock','Verificación de características y enlaces de productos','Destino real de cotizaciones'],'files':{}}
+    manifest = {'status':'draft','validation':'local-static-contract-v1','odoo_compatibility':'pending-in-odoo-review','target':'COMPUSUR website_id=1','format':'HTML fragment + scoped CSS; not an installable Odoo module','contains_live_connection':False,'unresolved':['Fotografías oficiales de productos','Vinculación dinámica a precios/stock','Verificación de características y enlaces de productos','Destino real de cotizaciones'],'files':{}}
     package_files = [target/'inicio.fragment.html',target/'compusur.css'] + current_assets
     for path in package_files:
         manifest['files'][path.relative_to(target).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
@@ -158,6 +205,22 @@ def check():
         if hashlib.sha256((target/name).read_bytes()).hexdigest()!=digest:raise ValueError('Huella distinta: '+name)
     print('Validado: fragmento sin scripts/formularios, destinos locales, IDs únicos y paquete con huellas correctas.')
 
+class PreviewHandler(SimpleHTTPRequestHandler):
+    """Sirve una página local útil sin perder el estado HTTP 404."""
+    def send_error(self, code, message=None, explain=None):
+        if code != 404:
+            return super().send_error(code, message, explain)
+        content = (Path(self.directory) / '404.html').read_text(encoding='utf-8')
+        requested = escape(urlsplit(self.path).path)
+        content = content.replace('{{REQUESTED_PATH}}', requested).encode('utf-8')
+        self.send_response(404, 'Not Found')
+        self.send_header('Content-Type', 'text/html; charset=utf-8')
+        self.send_header('Content-Length', str(len(content)))
+        self.send_header('Cache-Control', 'no-store')
+        self.end_headers()
+        if self.command != 'HEAD':
+            self.wfile.write(content)
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command',choices=['build','preview','export','check'])
@@ -168,7 +231,7 @@ def main():
     elif args.command=='check':check()
     else:
         target=build()
-        server=ThreadingHTTPServer(('127.0.0.1',args.port),partial(SimpleHTTPRequestHandler,directory=str(target)))
+        server=ThreadingHTTPServer(('127.0.0.1',args.port),partial(PreviewHandler,directory=str(target)))
         print(f'Vista previa local: http://127.0.0.1:{args.port}/',flush=True)
         try:server.serve_forever()
         except KeyboardInterrupt:pass

@@ -1,5 +1,11 @@
 # Alcance de esta biblioteca
 
+El estilo común está establecido en `docs/ESTILO-VISUAL.md` (Tienda editorial tecnológica). Leerlo antes de diseñar o modificar pantallas; mantener coherencia con `src/styles/tokens.css`. Cambiar esta dirección cuando la solicitud del usuario lo requiera y actualizar la referencia, sin inventar un estilo independiente por página.
+
+Para estructura del sitio, páginas nuevas o coherencia entre pantallas, usar `.agents/skills/diseno-integral-odoo/SKILL.md` y mantener `docs/DISENO-INTEGRAL.md` como referencia de decisiones. Coordinar skills por necesidad; no cargar todas ni abrir subagentes por el mero hecho de orquestar el diseño.
+
+Antes de proponer, crear o integrar páginas nuevas, leer `docs/PAGINAS-ODOO.md` y aplicar sus verificaciones. La lista de páginas de una captura no prueba permisos, publicación ni compatibilidad; comprobar el sitio y las rutas actuales en Odoo al implementar.
+
 Al diseñar, construir o exportar contenido de esta carpeta, lee `.agents/skills/compusur-odoo-design/SKILL.md`.
 
 ## Selección de skills

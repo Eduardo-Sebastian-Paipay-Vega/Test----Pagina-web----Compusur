@@ -4,6 +4,7 @@ Instalación local del 9 de octubre de 2026 en `.agents/skills/`, dentro de `com
 
 | Invocación | Función en COMPUSUR | Uso |
 |---|---|---|
+| `$diseno-integral-odoo` | Mapa de páginas, diseño compartido y coordinación de skills | Planificar el sitio y mantener coherencia entre pantallas |
 | `$compusur-odoo-design` | Estructura, exportación y límites de integración | Base común al trabajar esta biblioteca |
 | `$verificar-odoo` | Diagnóstico de la página actual y preparación real para Odoo | Al pedir revisión de compatibilidad o preparación de importación |
 | `$frontend-design` | Identidad visual, jerarquía, tipografía y contenido | Dirección visual habitual |
@@ -35,6 +36,12 @@ Se utilizó el instalador de skills de Codex con revisiones concretas, sin ejecu
 El registro `.agents/skills/sources.lock.json` contiene revisiones y huellas SHA-256 de las entradas originales y de la adaptación inicial. También registra la versión de la copia local de las directrices de interfaz de Vercel. Una revisión con acceso a internet consulta su versión oficial actual; si usa la copia, debe indicar su fecha.
 
 ## Cómo usarlas
+
+Para planificar páginas y coordinar el diseño:
+
+> Usa $diseno-integral-odoo para revisar qué páginas necesitamos y diseñar la siguiente pantalla respetando el diseño integral y los límites de Odoo.
+
+La referencia mantenida es `docs/DISENO-INTEGRAL.md`. La coordinación selecciona las skills pertinentes, sin ejecutar todos los procesos ni publicar por invocación.
 
 Para revisar compatibilidad en cualquier momento:
 

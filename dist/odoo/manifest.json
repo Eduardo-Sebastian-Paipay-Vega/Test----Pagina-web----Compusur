@@ -6,15 +6,15 @@
   "format": "HTML fragment + scoped CSS; not an installable Odoo module",
   "contains_live_connection": false,
   "unresolved": [
-    "Logotipo original",
-    "Imágenes reales de productos",
+    "Fotografías oficiales de productos",
     "Vinculación dinámica a precios/stock",
     "Verificación de características y enlaces de productos",
     "Destino real de cotizaciones"
   ],
   "files": {
-    "inicio.fragment.html": "02696f276d03c7ff24218297cff0677a175ad96c72a9fa5a4ebe167da0b749c8",
-    "compusur.css": "46c5a11e694b31f10705208bc85831c903cb885fc6903f749cefc924089db761",
-    "assets/media/COMPUSUR.png": "69db6ed60004f74dc4d27ec0236545b21fc54599e15f74cb1a3e4aa5d3c3516e"
+    "inicio.fragment.html": "0cc3357bb55c590c3aff86493e9686733c587397c36663ed27975531b117536b",
+    "compusur.css": "9ed75287c05a6deed959705943cf3325253ac3f0e4244acf39affd91ef06a602",
+    "assets/media/COMPUSUR.png": "69db6ed60004f74dc4d27ec0236545b21fc54599e15f74cb1a3e4aa5d3c3516e",
+    "assets/media/banners/hero-equipos-ambiente.png": "0c472730d213f96b65667fd0b42d1f16ae2b1b975f401c1ab3a5045051a303d2"
   }
 }

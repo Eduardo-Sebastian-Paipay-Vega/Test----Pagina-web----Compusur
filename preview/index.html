@@ -26,38 +26,29 @@
     <span class="cs-symbol" aria-hidden="true">▱</span>
   </button>
 </header>
-<nav class="cs-nav" aria-label="Categorías propuestas">
-  <button type="button" data-filter="Todos">Tienda</button>
-  <button type="button" data-filter="Computadoras">Computadoras</button>
-  <button type="button" data-filter="Monitores">Monitores</button>
-  <button type="button" data-filter="Laptops">Laptops</button>
-  <button type="button" data-action="quote" class="cs-contact">Solicitar cotización <span class="cs-symbol" aria-hidden="true">↗</span>
-  </button>
+<nav class="cs-nav" aria-label="Navegación principal">
+  <a href="/index.html">Inicio</a>
+  <a href="/catalogo/">Catálogo</a>
+  <a href="/nosotros/">Nosotros</a>
+  <a href="/servicios/">Servicios</a>
+  <a href="/cotizacion/" class="cs-contact">Solicitar cotización <span class="cs-symbol" aria-hidden="true">↗</span></a>
 </nav>
 
       <main><div class="cs-hero">
   <div class="cs-copy">
-    <div class="cs-eyebrow">Un espacio para tus ideas</div>
-    <h1>Tu próximo<br>gran proyecto<br>empieza aquí.</h1>
-    <p>Encuentra el equipo para tus proyectos. Explora nuestro catálogo o cuéntanos qué necesitas.</p>
+    <div class="cs-eyebrow">Tecnología para trabajar y crear</div>
+    <h1>Equipos de tecnología para cada proyecto.</h1>
+    <p>Explora laptops, computadoras, monitores y equipos de impresión en el catálogo COMPUSUR.</p>
     <div class="cs-actions">
-      <button type="button" class="cs-main" data-filter="Laptops">Explorar laptops <span class="cs-symbol" aria-hidden="true">→</span>
+      <button type="button" class="cs-main" data-filter="Todos">Explorar catálogo <span class="cs-symbol" aria-hidden="true">→</span>
       </button>
-      <button type="button" class="cs-secondary" data-action="quote">Necesito asesoría</button>
+      <button type="button" class="cs-secondary" data-action="quote">Solicitar cotización</button>
     </div>
   </div>
-  <div class="cs-art" role="img" aria-label="Ilustración conceptual de una portátil; no representa un modelo específico">
-    <div class="cs-orbit">
-    </div>
-    <div class="cs-screen">
-      <div class="cs-wallpaper">
-      </div>
-      <span>Haz espacio<br>para tus ideas.</span>
-    </div>
-    <div class="cs-base">
-    </div>
-    <small>Ilustración conceptual</small>
-  </div>
+  <figure class="cs-hero-visual">
+    <img src="assets/media/banners/hero-equipos-ambiente.png" alt="Entorno de trabajo con laptop, monitor, computadora de escritorio e impresora" width="1536" height="1024">
+    <figcaption>Imagen de ambiente; no corresponde a un producto específico.</figcaption>
+  </figure>
 </div>
 <div class="cs-paths">
   <button type="button" data-filter="Laptops">
@@ -82,26 +73,26 @@
 <section class="cs-catalog" id="catalogo">
   <div class="cs-sectionhead">
     <div>
-      <div class="cs-eyebrow">Equipos para cada proyecto</div>
-      <h2>Elige cómo quieres avanzar</h2>
+      <div class="cs-eyebrow">Equipos COMPUSUR</div>
+      <h2>Encuentra lo que necesitas</h2>
     </div>
     <button type="button" data-filter="Todos">Ver todos <span class="cs-symbol" aria-hidden="true">→</span>
     </button>
   </div>
   <div class="cs-products"><article class="cs-product" data-product data-category="Laptops">
-  <div class="cs-drawing"><small>Imagen del producto pendiente</small></div>
+  <div class="cs-drawing"><small>Fotografía oficial pendiente</small></div>
   <div class="cs-eyebrow">Laptops</div>
   <h3>HP 15-GW0013LA</h3><p>Ryzen 7 3700U · 8 GB RAM · 512 GB SSD</p>
-  <button class="cs-product-link" type="button" data-details="HP 15-GW0013LA" data-url="/shop/tmvfm-portatil-hp-15-gw0013la-15-6-fhd-ryzen-7-3700u-10">Ver ficha y precio →</button>
+  <button class="cs-product-link" type="button" data-details="HP 15-GW0013LA" data-url="/shop/tmvfm-portatil-hp-15-gw0013la-15-6-fhd-ryzen-7-3700u-10">Ver ficha del producto →</button>
 </article>
 <article class="cs-product" data-product data-category="Laptops">
-  <div class="cs-drawing"><small>Imagen del producto pendiente</small></div>
+  <div class="cs-drawing"><small>Fotografía oficial pendiente</small></div>
   <div class="cs-eyebrow">Laptops</div>
   <h3>ASUS TUF Gaming F16</h3><p>Intel Core 5 · 16 GB RAM · RTX 3050</p>
   <button class="cs-product-link" type="button" data-details="ASUS TUF Gaming F16" data-url="/shop">Consultar catálogo →</button>
 </article>
 <article class="cs-product" data-product data-category="Impresión">
-  <div class="cs-drawing"><small>Imagen del producto pendiente</small></div>
+  <div class="cs-drawing"><small>Fotografía oficial pendiente</small></div>
   <div class="cs-eyebrow">Impresión</div>
   <h3>HP DesignJet T950</h3><p>Consulta las características en su ficha.</p>
   <button class="cs-product-link" type="button" data-details="HP DesignJet T950" data-url="/shop">Consultar catálogo →</button>
@@ -109,11 +100,28 @@
   <p class="cs-result" aria-live="polite">
   </p>
 </section>
+<section class="cs-journey" aria-label="Cómo encontrar y cotizar un equipo">
+  <a href="/catalogo/">
+    <span class="cs-journey-label">Explora</span>
+    <strong>Encuentra equipos por categoría</strong>
+    <span>Empieza por laptops, computadoras o monitores.</span>
+  </a>
+  <a href="/shop">
+    <span class="cs-journey-label">Compara</span>
+    <strong>Revisa la ficha del producto</strong>
+    <span>Consulta sus detalles y condiciones disponibles.</span>
+  </a>
+  <a href="/contactus">
+    <span class="cs-journey-label">Continúa</span>
+    <strong>Solicita una cotización</strong>
+    <span>Indica qué equipo necesitas.</span>
+  </a>
+</section>
 <section class="cs-quote">
   <div>
-    <div class="cs-eyebrow">Conversemos sobre lo que necesitas</div>
-    <h2>¿Un equipo o una compra para tu empresa?</h2>
-    <p>Cuéntanos el uso, la cantidad y tu presupuesto.</p>
+    <div class="cs-eyebrow">¿Necesitas cotizar?</div>
+    <h2>Cuéntanos qué equipo estás buscando</h2>
+    <p>Consulta el catálogo o escríbenos para solicitar una cotización.</p>
   </div>
   <button type="button" data-action="quote" class="cs-main">Solicitar cotización <span class="cs-symbol" aria-hidden="true">→</span>
   </button>
@@ -121,7 +129,11 @@
 </main>
       <footer class="cs-footer">
   <strong>COMPUSUR</strong>
-  <span>Catálogo · Contacto · Condiciones de compra</span>
+  <nav class="cs-footer-nav" aria-label="Enlaces del pie">
+    <a href="/catalogo/">Catálogo</a>
+    <a href="/cotizacion/">Contacto</a>
+    <a href="/privacidad/">Privacidad</a>
+  </nav>
   <small>Vista de diseño · sin pedidos ni consultas reales</small>
 </footer>
 
